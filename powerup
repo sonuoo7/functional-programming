@@ -1,0 +1,23 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+  public static int powerUp(int n,int p){
+    int product=1;
+    while (p>0){
+      product=product*n;
+      p--;
+    }
+    return product;
+  }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+      int n,p;
+		Scanner sc=new Scanner(System.in);
+      n=sc.nextInt();
+      p=sc.nextInt();
+  System.out.println(powerUp(n,p));
+}
+}
