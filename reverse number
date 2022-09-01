@@ -1,0 +1,23 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+  public static int reverseNo(int number){
+    int reverse=0;
+     while(number != 0){
+        int remainder = number % 10;
+        reverse = reverse * 10 + remainder;
+        number = number/10;
+  }
+      return reverse;
+  }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+      
+      Scanner sc= new Scanner(System.in);
+      int number=sc.nextInt();
+    System.out.println(reverseNo(number));
+}  
+	}
