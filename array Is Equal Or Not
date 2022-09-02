@@ -1,0 +1,40 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+  public static int arrayIsEqualOrNot(int A[],int B[],int size){
+   
+    int flag=0;
+             for (int i=0;i<size; i++){
+             if (A[i]==B[i]){
+               flag=1;
+             }
+             }
+             if (flag==1){
+               return 1;
+               
+             }else{
+              return 0;
+  }
+  }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+      int size=sc.nextInt();
+        int A[]=new int [size];
+      int B[]=new int [size];
+        //input
+        for(int i=0; i<size; i++){
+            A[i]=sc.nextInt();
+              B[i]=sc.nextInt();
+          }
+      Arrays.sort(B);
+         System.out.println( arrayIsEqualOrNot(A, B, size));
+               
+             }
+}
+      
+      
+       
