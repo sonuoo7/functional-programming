@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+  public static void peakElement(int size,int arr[]){
+     if(size==0){
+          System.out.println(0);
+          return;
+        }
+        boolean flag=false;
+        for(int i=0;i<size;i++){
+            if((i==0&&arr[i+1]<arr[i])||(i==size-1&&arr[i-1]<arr[i])){
+              System.out.println(i);
+              flag=true;
+              break;
+            }
+            if(i!=0&&i!=size-1&&arr[i-1]<arr[i]&&arr[i+1]<arr[i]){
+              System.out.println(i);
+              flag=true;
+              break;
+            }
+        }
+        if (flag==false){
+          System.out.println(-1);
+        }
+  }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+      Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        //input
+       
+        for (int i = 0; i <size; i++) { //this  is important
+            arr[i] = sc.nextInt();
+        }
+       peakElement(size,arr);
+           }
+}
