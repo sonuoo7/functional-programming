@@ -33,3 +33,5 @@ public class DiagonalSum {
 
     }
 }
+ // If n is odd at you are at middle row dont include else include
+            if((n%2!=0) && (i==n/2)) continue;
