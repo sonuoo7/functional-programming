@@ -1,0 +1,70 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Node{
+        int data;
+        Node next;
+        Node(int data){
+                this.data=data;
+                this.next=null;
+        }
+}
+class LinkedList{
+        Node head;
+        Node tail;
+        void insertAtEnd(int value)
+        {
+                Node newNode=new Node(value);
+                if(head==null&&tail==null){
+                        head=newNode;
+                        tail=newNode;
+                }else{
+                        tail.next=newNode;
+                        tail=newNode;
+                }
+        }
+        void Delete_Middle_Node(){
+                Node slow=head;
+                Node fast=head;
+                Node prev=null;
+                while(fast!=null&&fast.next!=null){
+                        prev=slow;
+                        slow=slow.next;
+                        fast=fast.next.next;
+                }
+                if (prev!=null){
+                        prev.next=prev.next.next;
+                }else{
+                        head=null;
+                }
+        }
+        void printLinkedList(){
+                if (head==null){
+                        System.out.println("-1");
+                }else{
+                        Node temp=head;
+                        while(temp!=null){
+                                System.out.print(temp.data+" ");
+                                temp=temp.next;
+                        }
+                        System.out.println();
+                }
+        }
+}
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//your code here
+                LinkedList list=new LinkedList();
+                Scanner sc=new Scanner(System.in);
+                int n=sc.nextInt();
+                for(int i=0;i<n;i++){
+                        int x=sc.nextInt();
+                        list.insertAtEnd(x);
+                }
+                list.Delete_Middle_Node();
+                list.printLinkedList();
+	}
+}
